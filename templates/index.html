@@ -1,0 +1,35 @@
+{% extends "layout.html" %} {% block mainContent %}
+<section class="TasktList">
+  {% for task in completions %}  
+  <div class="task">
+    <p class="taskName">{{ task }}</p>
+    <svg
+      class="taskIcon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  </div>
+  {% endfor %}
+  {% for task in tasks %}
+  <div class="task">
+    <form method="POST" class="taskForm" action="{{ url_for('tasks.complete') }}">
+      <input
+        type="hidden"
+        id="taskId"
+        name="taskName"
+        value="{{ task['name'] }}"
+      />
+      <input type="hidden" id="date" name="date" value="{{ selectedDate }}" />
+      <button type="submit" class="taskButton">{{ task["name"] }}</button>
+    </form>
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}

@@ -1,0 +1,217 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+.header,
+.main {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  background: black;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 6px 6px 6px 6px;
+}
+
+.headerLink {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.1s ease-in-out;
+  margin-left: 1rem;
+}
+
+.headerLink:hover {
+  color: #f9dba0;
+}
+
+.today{
+   text-decoration: none;
+    color: inherit;
+    transition: color 0.1s ease-in-out;
+    font-size: 1.2rem;
+}
+
+.todayDate{
+  margin-left: 3rem;
+  
+}
+
+.todayDate:hover{
+  color: #f9dba0; 
+}
+
+.headerLogo {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  max-width: 492px;
+  font-size: 1.1rem;
+  padding: 2px;
+  margin-left: 10%;
+}
+
+.formInput {
+  padding: 10px 10px;
+  font-family: inherit;
+  font-size: inherit;
+  resize: none;
+  border: 2px soild #000;
+  border-radius: 6px;
+  background-color: #fafafa;
+  margin-bottom: 8px;
+}
+
+.formButton {
+  margin-top: 1px;
+  font-size: inherit;
+  background-color: #f9dba0;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  padding: 0.5rem 2.5rem;
+  display: flex;
+  align-self: flex-end;
+}
+
+.formButton:hover {
+  color: #9b6c0d;
+  transition: color 0.1s ease-in-out;
+}
+
+.dates {
+  display: flex;
+  justify-content: space-around;
+  color: #000;
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+}
+
+.dateLink {
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+}
+
+.dateLink:not(.dateLinkCurrent):hover {
+  background-color: #e5e5e5;
+}
+
+.dateLinkCurrent {
+  background-color: #f9dba0;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dateLink:first-of-type,
+.dateLink:last-of-type,
+.dateLink:nth-of-type(2),
+.dateLink:nth-last-of-type(2) {
+  display: none;
+}
+
+@media screen and (min-width: 25rem) {
+
+  .dateLink:nth-of-type(2),
+  .dateLink:nth-last-of-type(2) {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 35rem) {
+
+  .dateLink:first-of-type,
+  .dateLink:last-of-type {
+    display: block;
+  }
+}
+
+.taskIcon {
+  width: 1em;
+  height: 1em;
+  margin-right: 8px;
+}
+
+.taskName {
+  margin: 0;
+  display: block;
+  width: 100%;
+  padding: 20px;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: left;
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+}
+
+.taskForm {
+  width: 100%;
+}
+
+.taskButton {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: left;
+  border: none;
+  background-color: unset;
+  cursor: pointer;
+}
+
+
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 26px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff2d8;
+  border: 3px solid black;
+  border-radius: 6px;
+  padding: 0;
+}
+
+.task:hover {
+  background-color: #e9cd87;
+  transition: color 0.1s ease-in-out;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

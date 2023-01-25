@@ -1,0 +1,16 @@
+{% extends "layout.html" %} {% block mainContent %}
+<div >
+<form class="form" method="POST" action = "{{ url_for('tasks.index') }}" >
+    <textarea
+      class="formInput"
+      id="task"
+      name="task"
+      rows="3"
+      placeholder=" Add a new task..."
+    ></textarea>
+    <button class="formButton" type="submit" id="submit" >
+            Add
+    </button>
+  </form>
+</div> 
+{% endblock %}

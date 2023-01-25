@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon"  type="image/png/svg"  href="/static/DALL·E 2023-01-20 22.43.52 - logo for task tracker.png" />
+    <title>
+      {{ title }}</title>
+      <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/main.css" />
+
+    {% block head_content %} {% endblock %}
+  </head>
+
+  <body>
+    <header class="header">
+      <h1 class="headerLogo">
+        <a href="{{ url_for('tasks.index') }}" class="headerLink"> Tasks</a>
+      </h1>
+      <a class="today" href="{{ url_for('tasks.index') }}"> <div class ="todayDate"> 
+        Today  {{CurrentDay.strftime("%d")}}
+      </div>
+    </a>
+      {% if "add" not in request.endpoint %}
+      <a href="{{ url_for('tasks.addTask') }}" class="headerLink">+ Add new Task</a>
+      {% endif %}
+    </header>
+
+    <main class="main">
+      <section class="dates" dates>
+        {% for date in dateRange(selectedDate) %}
+        <a
+          class="dateLink {{'dateLinkCurrent' if loop.index0 == 3 else ''}}"
+          href="{{ url_for('tasks.index', date=date)}}"
+        >
+          <time class="date" datetime="{{date}}">
+            <span>{{date.strftime("%a")}}</span>
+            <span>{{date.strftime("%d")}}</span>
+            
+          </time>
+        </a>
+        {% endfor %}
+      </section>
+      {% block mainContent %} {% endblock %}
+    </main>
+  </body>
+</html>
